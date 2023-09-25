@@ -5,10 +5,10 @@ const NotLog = () => {
   return (
     <>
       <li>
-        <Link to="/auth/signin">التسجيل</Link>
+        <Link to="/signup">التسجيل</Link>
       </li>
       <li>
-        <Link to="/auth/signup" className="">
+        <Link to="/signin" className="">
           الدخول
         </Link>
       </li>

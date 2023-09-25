@@ -8,15 +8,15 @@ const Nav = () => {
         <ul>
           <AccountSection />
           <li className="nav-item dropdown">
-            <a
-              href="#"
+            <Link
+              to=""
               role="button"
               className="nav-link dropdown-toggle"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               عننا
-            </a>
+            </Link>
             <ul className="dropdown-menu">
               <li>
                 <Link to="/aboutus" className="dropdown-item">
