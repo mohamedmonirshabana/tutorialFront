@@ -9,6 +9,14 @@ const ExamCard = (props) => {
         <h5 className="card-title">{props.Examname}</h5>
         <p className="card-text">
           {resu ? "الامتحان مفعل" : "الامتحان غير مفعل"}
+          <br />
+          {resu ? (
+            <Link to={`/admin/examdeactive/${props.exid}`}>
+              الغاء تفعيل الامتحان
+            </Link>
+          ) : (
+            <Link to={`/admin/examactive/${props.exid}`}>تفعيل الامتحان</Link>
+          )}
         </p>
         <ol className="list-group list-group-numbered">
           <li className="list-group-item d-flex justify-content-between align-items-start">
@@ -48,7 +56,7 @@ const ExamCard = (props) => {
             </span>
           </li>
         </ol>
-        <Link to="" className="btn btn-danger">
+        <Link to={`/admin/examdelete/${props.exid}`} className="btn btn-danger">
           حذف الامتحان
         </Link>
         <Link to="" className="">

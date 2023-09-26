@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ExamCard from "../../UI/exam/ExamCard";
 import AdminSide from "../adminGeneral/AdminSide";
 
@@ -28,19 +29,30 @@ const ShowExam = () => {
           <AdminSide />
         </div>
         <div className="col-10">
-          <div className="d-fex flex-md-row">
-            {exam.map((exData) => (
-              <ExamCard
-                key={exData._id}
-                active={exData.active}
-                Examname={exData.examname}
-                examdegree={exData.examDegree}
-                sucesspers={exData.examsuccessPersent}
-                qcount={exData.examQuestionCount}
-                excount={exData.examquestion.length}
-                exid={exData._id}
-              />
-            ))}
+          <div className="container-fluid mt-3">
+            <div className="row">
+              <div className="col-2">
+                <Link to="/admin/exam/create" className="btn btn-primary">
+                  اضافة امتحان
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="row mt-3">
+            <div className="d-fex flex-md-row">
+              {exam.map((exData) => (
+                <ExamCard
+                  key={exData._id}
+                  active={exData.active}
+                  Examname={exData.examname}
+                  examdegree={exData.examDegree}
+                  sucesspers={exData.examsuccessPersent}
+                  qcount={exData.examQuestionCount}
+                  excount={exData.examquestion.length}
+                  exid={exData._id}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

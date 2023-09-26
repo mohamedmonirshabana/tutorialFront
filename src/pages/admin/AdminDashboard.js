@@ -2,6 +2,7 @@ import React from "react";
 import AdminHeader from "../../components/general/header/AdminHeader";
 import AdminSide from "../../components/admin/adminGeneral/AdminSide";
 import GeneralFooter from "../../components/general/footer/GeneralFooter";
+// import SpecialFooter from "../../components/general/footer/SpecialFooter";
 const AdminDashboard = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const AdminDashboard = () => {
           </div>
         </div>
       </div>
+      {/* <SpecialFooter /> */}
       <GeneralFooter />
     </>
   );
