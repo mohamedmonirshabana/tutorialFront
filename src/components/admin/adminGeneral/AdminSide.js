@@ -14,13 +14,13 @@ const AdminSide = () => {
         <Link to="/admin/questions"> الاسئلة </Link>
       </li>
       <li className="list-group-item">
-        <Link to="">المسارات</Link>
+        <Link to="/admin/track">المسارات</Link>
       </li>
       <li className="list-group-item">
-        <Link to="">الكورس</Link>
+        <Link to="/admin/courses">الكورس</Link>
       </li>
       <li className="list-group-item">
-        <Link to="">الفيديوهات</Link>
+        <Link to="/admin/video/all">الفيديوهات</Link>
       </li>
       <li className="list-group-item">
         <Link to="">الانشطة</Link>

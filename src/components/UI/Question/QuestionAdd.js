@@ -16,7 +16,7 @@ const QuestionAdd = () => {
   function videoid(id) {
     vide = id;
   }
-  let file = null;
+  // let file = null;
   // const [formData, setFormData] = useState(null);
 
   const Qtitle = useRef();
@@ -25,7 +25,7 @@ const QuestionAdd = () => {
   const inputRef = useRef();
   const HandleImageChange = (event) => {
     event.preventDefault();
-    file = event.target.files[0];
+    // file = event.target.files[0];
     //console.log(file);
     setImage(event.target.files[0]);
     console.log(image);

@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const DeleteQuestion = (props) => {
+const DeleteCourse = (props) => {
   let navigate = useNavigate();
   const token = localStorage.getItem("token");
   useEffect(() => {
-    dele();
+    Dlete();
   }, []);
-  const dele = async () => {
-    const respons = await fetch(
-      `http://localhost:8000/admin/question/${props.parm}`,
+  const Dlete = async () => {
+    const respon = await fetch(
+      `http://localhost:8000/admin/course/${props.id}`,
       {
         method: "DELETE",
         headers: {
@@ -17,10 +17,10 @@ const DeleteQuestion = (props) => {
         },
       }
     );
-    const Data = await respons.json();
-    navigate("/admin/questions", { replace: true });
+    const Data = await respon.json();
+    navigate("/admin/courses", { replace: true });
   };
-  return <>hello</>;
+  return <>Hello</>;
 };
 
-export default DeleteQuestion;
+export default DeleteCourse;

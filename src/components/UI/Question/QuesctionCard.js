@@ -4,7 +4,7 @@ const QuestionCard = (props) => {
   return (
     <div className="card" style={{ width: "18rem" }}>
       {props.imgurl ? (
-        <img src={props.imgurl} class="card-img-top" alt="..." />
+        <img src={props.imgurl} className="card-img-top" alt="..." />
       ) : (
         <></>
       )}

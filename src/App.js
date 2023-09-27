@@ -17,6 +17,14 @@ import QuestionAdd from "./pages/admin/question/QuestionAdd";
 import QuestionAll from "./pages/admin/question/QuestionAll";
 import QuestionDelete from "./pages/admin/question/QuestionDelete";
 import AnswerAdd from "./pages/admin/answer/AnswerAdd";
+import AllTrack from "./pages/admin/track/AllTrack";
+import AddTrack from "./pages/admin/track/AddTrack";
+import RemoveTrack from "./pages/admin/track/RemoveTrack";
+import CourseAll from "./pages/admin/course/CourseAll";
+import CourseDelete from "./pages/admin/course/CourseDelete";
+import AddCourse from "./pages/admin/course/AddCourse";
+import ShowVideo from "./pages/admin/video/ShowVideo";
+import Addvideo from "./pages/admin/video/Addvideo";
 const App = () => {
   return (
     <div>
@@ -41,6 +49,14 @@ const App = () => {
           element={<QuestionDelete />}
         />
         <Route path="/admin/answer/add/:qid" element={<AnswerAdd />} />
+        <Route path="/admin/track" element={<AllTrack />} />
+        <Route path="/admin/track/add" element={<AddTrack />} />
+        <Route path="/admin/track/:trackid" element={<RemoveTrack />} />
+        <Route path="/admin/courses" element={<CourseAll />} />
+        <Route path="/admin/course/:cid" element={<CourseDelete />} />
+        <Route path="/admin/course/add" element={<AddCourse />} />
+        <Route path="/admin/video/all" element={<ShowVideo />} />
+        <Route path="/admin/video/add" element={<Addvideo />} />
       </Routes>
     </div>
   );
