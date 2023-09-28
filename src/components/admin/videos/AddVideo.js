@@ -9,6 +9,7 @@ const AddVideo = () => {
   const title = useRef();
   const [video, setVideo] = useState();
   const [courid, setCourid] = useState();
+  const [vtitle, setVtitle] = useState("");
 
   const HandleImageChange = (event) => {
     event.preventDefault();
@@ -22,10 +23,10 @@ const AddVideo = () => {
   function addvideoData(event) {
     event.preventDefault();
     console.log(title.current.value);
+    setVtitle(title.current.value);
     const formData = new FormData();
-    formData.append("videoTitle", title.current.value);
+    formData.append("title", title.current.value);
     formData.append("videofile", video);
-
     fetch(`http://localhost:8000/admin/video/add/${courid}`, {
       method: "POST",
       body: formData,
@@ -38,7 +39,9 @@ const AddVideo = () => {
       })
       .then((data) => {
         console.log(data);
-        navigate("admin/video/all");
+        navigate("/admin/video/all", {
+          replace: true,
+        });
       });
   }
   return (

@@ -23,7 +23,7 @@ const AdminSide = () => {
         <Link to="/admin/video/all">الفيديوهات</Link>
       </li>
       <li className="list-group-item">
-        <Link to="">الانشطة</Link>
+        <Link to="/admin/activities"> الانشطة </Link>
       </li>
       <li className="list-group-item">
         <Link to="">المكتبة</Link>

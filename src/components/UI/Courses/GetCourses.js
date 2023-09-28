@@ -29,7 +29,7 @@ const GetCourses = (props) => {
         aria-label="Default select example"
         onChange={changevalue}
       >
-        <option selected>اختر كورس</option>
+        <option value="0">اختر كورس</option>
         {course.length === 0 ? (
           <option>مفيش كورسات</option>
         ) : (

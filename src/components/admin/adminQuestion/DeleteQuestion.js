@@ -18,6 +18,7 @@ const DeleteQuestion = (props) => {
       }
     );
     const Data = await respons.json();
+    console.log(Data);
     navigate("/admin/questions", { replace: true });
   };
   return <>hello</>;

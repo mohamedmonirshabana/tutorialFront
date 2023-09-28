@@ -9,7 +9,6 @@ const VideoCard = (props) => {
       </div>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">Length: {props.videoLength}</li>
-        <li className="list-group-item">Video url</li>
         <li className="list-group-item">
           <Link to={props.url} className="link-success">
             Video URL
@@ -17,12 +16,9 @@ const VideoCard = (props) => {
         </li>
       </ul>
       <div className="card-body">
-        <a href="#" className="card-link">
-          Card link
-        </a>
-        <a href="#" className="card-link">
-          Another link
-        </a>
+        <Link to={`/admin/video/delete/${props.id}`} className="card-link">
+          Delete
+        </Link>
       </div>
     </div>
   );

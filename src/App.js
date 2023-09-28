@@ -25,6 +25,8 @@ import CourseDelete from "./pages/admin/course/CourseDelete";
 import AddCourse from "./pages/admin/course/AddCourse";
 import ShowVideo from "./pages/admin/video/ShowVideo";
 import Addvideo from "./pages/admin/video/Addvideo";
+import Delete from "./pages/admin/video/Delete";
+import ShowActivities from "./pages/admin/activities/ShowActivities";
 const App = () => {
   return (
     <div>
@@ -57,6 +59,8 @@ const App = () => {
         <Route path="/admin/course/add" element={<AddCourse />} />
         <Route path="/admin/video/all" element={<ShowVideo />} />
         <Route path="/admin/video/add" element={<Addvideo />} />
+        <Route path="/admin/video/delete/:vid" element={<Delete />} />
+        <Route path="/admin/activities" element={<ShowActivities />} />
       </Routes>
     </div>
   );
