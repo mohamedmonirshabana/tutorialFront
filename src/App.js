@@ -27,6 +27,11 @@ import ShowVideo from "./pages/admin/video/ShowVideo";
 import Addvideo from "./pages/admin/video/Addvideo";
 import Delete from "./pages/admin/video/Delete";
 import ShowActivities from "./pages/admin/activities/ShowActivities";
+import AddActivity from "./pages/admin/activities/AddActivity";
+import ActDelete from "./pages/admin/activities/ActDelete";
+import Libraryes from "./pages/admin/library/Libraryes";
+import DeleteLibrary from "./pages/admin/library/DeleteLibrary";
+import AddLibrary from "./pages/admin/library/AddLibrary";
 const App = () => {
   return (
     <div>
@@ -61,6 +66,14 @@ const App = () => {
         <Route path="/admin/video/add" element={<Addvideo />} />
         <Route path="/admin/video/delete/:vid" element={<Delete />} />
         <Route path="/admin/activities" element={<ShowActivities />} />
+        <Route path="/admin/activity/add" element={<AddActivity />} />
+        <Route path="/admin/active/delete/:actid" element={<ActDelete />} />
+        <Route path="/admin/library" element={<Libraryes />} />
+        <Route
+          path="/admin/library/delete/:libid"
+          element={<DeleteLibrary />}
+        />
+        <Route path="/admin/library/add" element={<AddLibrary />} />
       </Routes>
     </div>
   );

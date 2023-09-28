@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ExamCreate from "../../UI/exam/ExamCreate";
 import AdminSide from "../adminGeneral/AdminSide";
 

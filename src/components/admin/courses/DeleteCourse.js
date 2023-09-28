@@ -18,9 +18,13 @@ const DeleteCourse = (props) => {
       }
     );
     const Data = await respon.json();
-    navigate("/admin/courses", { replace: true });
+    if (Data) {
+      navigate("/admin/courses", {
+        replace: true,
+      });
+    }
   };
-  return <>Hello</>;
+  return <> Hello </>;
 };
 
 export default DeleteCourse;

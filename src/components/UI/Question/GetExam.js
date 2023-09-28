@@ -25,7 +25,6 @@ const GetExam = (props) => {
     console.log(id);
     props.examID(id);
   }
-  let i = 0;
 
   return (
     <select className="form-control" ref={exid} onChange={changevalue}>

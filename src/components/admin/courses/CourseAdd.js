@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import ATrack from "../../UI/Courses/ATrack";
 import GetExam from "../../UI/Question/GetExam";
-import Recondition from "./Rcondition";
 
 const CourseAdd = () => {
   const navigate = useNavigate();
@@ -28,25 +27,25 @@ const CourseAdd = () => {
   const instruct = useRef();
   const refTarget = useRef();
 
-  function handelForm(event) {
-    event.preventDefault();
-    const Data = {
-      coursename: cName.current.value,
-      examid: track,
-      Author: Author,
-      aboutCourse: about.current.value,
-      instruction: instruc,
-      target: target,
-    };
-    fetch(`http://localhost/admin/course/add/${track}`, {
-      method: "POST",
-      body: JSON.stringify(Data),
-      headers: {
-        Authorization: `${token}`,
-        "content-type": "application/json",
-      },
-    });
-  }
+  // function handelForm(event) {
+  //   event.preventDefault();
+  //   const Data = {
+  //     coursename: cName.current.value,
+  //     examid: track,
+  //     Author: Author,
+  //     aboutCourse: about.current.value,
+  //     instruction: instruc,
+  //     target: target,
+  //   };
+  //   fetch(`http://localhost/admin/course/add/${track}`, {
+  //     method: "POST",
+  //     body: JSON.stringify(Data),
+  //     headers: {
+  //       Authorization: `${token}`,
+  //       "content-type": "application/json",
+  //     },
+  //   });
+  // }
 
   function changeCondition() {
     if (conditiontrue.current.checked) {
