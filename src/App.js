@@ -32,6 +32,9 @@ import ActDelete from "./pages/admin/activities/ActDelete";
 import Libraryes from "./pages/admin/library/Libraryes";
 import DeleteLibrary from "./pages/admin/library/DeleteLibrary";
 import AddLibrary from "./pages/admin/library/AddLibrary";
+// import Logout from "./components/auth/Logout";
+import Home from "./pages/user/Home";
+import PreExam from "./pages/user/PreExam";
 const App = () => {
   return (
     <div>
@@ -74,6 +77,8 @@ const App = () => {
           element={<DeleteLibrary />}
         />
         <Route path="/admin/library/add" element={<AddLibrary />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/preexam" element={<PreExam />} />
       </Routes>
     </div>
   );

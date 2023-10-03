@@ -29,9 +29,9 @@ const SignInForm = () => {
         localStorage.setItem("r", data.role);
         localStorage.setItem("userName", data.username);
         if (data.role === "student") {
-          navigate("/user", { replace: true });
+          navigate("/home", { replace: true });
         } else if (data.role === "admin") {
-          navigate("/admin/", { replace: true });
+          navigate("/admin", { replace: true });
         }
       });
   }
