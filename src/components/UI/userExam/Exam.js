@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import ExamHeader from "./ExamHeader";
+import { Link, useNavigate } from "react-router-dom";
 import ExamBody from "./ExamBody";
-// import ExamAnswer from "./ExamAnswer";
-// import ExamQuestion from "./ExamQuestion";
-// import ExamTail from "./ExamTail";
+import ExamStart from "./ExamStart";
 
 const ExamD = [
   {
@@ -40,11 +38,11 @@ const ExamD = [
     answers: [
       {
         id: 905,
-        questitle: "A good one",
+        questitle: "A good Another",
       },
       {
         id: 906,
-        questitle: "A another  one",
+        questitle: "A another  Two One",
       },
       {
         id: 907,
@@ -58,24 +56,90 @@ const ExamD = [
   },
 ];
 
-const Exam = (props) => {
-  const [exData, setExData] = useState(ExamD);
-  console.log(exData);
-  const [arnum, setArnum] = useState(0);
-  const [senAr, setSenAr] = useState(exData[0]);
+const Exam = ({
+  examid,
+  exdata,
+  examname,
+  examDegree,
+  Questioncount,
+  allQuestions,
+}) => {
+  let navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  const [showPanel, setShowPanel] = useState(true);
+  const [items, setItems] = useState([{}]);
+  // const [examName, setExamName] = useState("");
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [questions, setQuestions] = useState([]);
+  const fetchItems = async () => {
+    // questions.push(allQuestions);
+    // setExamName(exdata.examName);
+    items.push(allQuestions);
+    // console.log(questions);
+  };
 
-  console.log(senAr);
-  function increment() {
-    console.log("exam");
-    setArnum(arnum + 1);
-    console.log(arnum);
-    setSenAr(exData[1]);
-    console.log(senAr);
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
+  const sendData = async () => {
+    console.log("Exam");
+    const Arr = [];
+    for (let i = 0; i < questions.length; i++) {
+      Arr.push(questions[i]);
+    }
+    const Data = questions;
+
+    const Dsen = await fetch(
+      `http://localhost:8000/exam/examresult/${examid}`,
+      {
+        method: "post",
+        body: JSON.stringify(Arr),
+        headers: {
+          "content-type": "application/json",
+          Authorization: `${token}`,
+        },
+      }
+    );
+    const result = await Dsen.json();
+    navigate(`/Examresult/${result}`, { replace: true });
+  };
+
+  function addQuestionAndAnswer(qid, ansid) {
+    const updateData = [{ questionid: qid, answerid: ansid }];
+    questions.push(updateData);
+    console.log(questions);
   }
-
+  const ChangePanel = (event) => {
+    event.preventDefault();
+    setShowPanel(false);
+  };
   return (
     <>
-      <ExamBody dt={senAr} qlen={exData.length} chang={increment} />
+      {showPanel ? (
+        <div
+          className="container border border-dark shadow p-3 mb-5 bg-body-tertiary rounded"
+          dir="rtl"
+        >
+          <h1 className="text-center">{examname}</h1>
+          <hr />
+          <h2>درجة الامتحان {examDegree}</h2>
+          <h2>عدد الاسئلة {Questioncount}</h2>
+          <button className="get-started-btn" onClick={ChangePanel}>
+            الامتحان
+          </button>
+        </div>
+      ) : (
+        <div>
+          {/* <ExamStart examName={examname} QuestionCount={items.length} /> */}
+          <ExamBody
+            key={Math.floor(Math.random() * 1e9)}
+            data={allQuestions}
+            evn={addQuestionAndAnswer}
+            ad={sendData}
+          />
+        </div>
+      )}
     </>
   );
 };

@@ -1,11 +1,38 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import AnswerCard from "./AnswerCard";
 
-const ExamAnswer = () => {
+const ExamAnswer = ({ answerssend, getid }) => {
+  console.log(answerssend);
+  const [ans, setAns] = useState([{}]);
+  const myAr = ["A", "B", "C", "D"];
+  const getAnswer = () => {
+    setAns();
+    // setArcou(-1);
+  };
+  useEffect(() => {
+    getAnswer();
+  }, []);
+  function AnsID(id) {
+    console.log(id);
+    getid(id);
+  }
   return (
     <div className="col-6 ">
       <div className="container h-100 mt-5 ">
         <div className="d-flex flex-column justify-content-between">
-          <div className="form-check">
+          {answerssend &&
+            answerssend.map((an, indx) => (
+              <AnswerCard
+                key={an.id}
+                answertitle={an.title}
+                sidechar={myAr}
+                id={an.id}
+                test={indx}
+                kid={AnsID}
+              />
+            ))}
+          ;
+          {/* <div className="form-check">
             <input
               className="form-check-input d-none"
               type="radio"
@@ -24,9 +51,9 @@ const ExamAnswer = () => {
                 </div>
               </div>
             </label>
-          </div>
+          </div> */}
           {/* <!-- end answer 1 --> */}
-          <div className="form-check">
+          {/* <div className="form-check">
             <input
               className="form-check-input d-none"
               type="radio"
@@ -45,9 +72,9 @@ const ExamAnswer = () => {
                 </div>
               </div>
             </label>
-          </div>
+          </div> */}
           {/* <!-- end answer 2 --> */}
-          <div className="form-check">
+          {/* <div className="form-check">
             <input
               className="form-check-input d-none"
               type="radio"
@@ -66,9 +93,9 @@ const ExamAnswer = () => {
                 </div>
               </div>
             </label>
-          </div>
+          </div> */}
           {/* <!-- end answer 3 --> */}
-          <div className="form-check">
+          {/* <div className="form-check">
             <input
               className="form-check-input d-none"
               type="radio"
@@ -87,7 +114,7 @@ const ExamAnswer = () => {
                 </div>
               </div>
             </label>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

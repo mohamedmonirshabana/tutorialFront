@@ -35,6 +35,9 @@ import AddLibrary from "./pages/admin/library/AddLibrary";
 // import Logout from "./components/auth/Logout";
 import Home from "./pages/user/Home";
 import PreExam from "./pages/user/PreExam";
+import UserFirstTimepage from "./pages/user/UserFirstTimepage";
+import Choose from "./pages/user/Choose";
+import PreExamResult from "./pages/user/PreExamResult";
 const App = () => {
   return (
     <div>
@@ -78,7 +81,10 @@ const App = () => {
         />
         <Route path="/admin/library/add" element={<AddLibrary />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/preexam" element={<PreExam />} />
+        <Route path="/choose" element={<Choose />} />
+        <Route path="/firsttime" element={<UserFirstTimepage />} />
+        <Route path="/preexam2d" element={<PreExam />} />
+        <Route path="/prerxamresult/:archive" element={<PreExamResult />} />
       </Routes>
     </div>
   );

@@ -21,7 +21,7 @@ const DeleteQuestion = (props) => {
     console.log(Data);
     navigate("/admin/questions", { replace: true });
   };
-  return <>hello</>;
+  return <div>hello</div>;
 };
 
 export default DeleteQuestion;

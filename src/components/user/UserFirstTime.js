@@ -15,11 +15,12 @@ const UserFirstTime = () => {
       },
     });
     const data = await respon.json();
+    console.log(data);
 
     if (data.firstTime) {
-      navigate("/preexam", { replace: true });
+      navigate("/choose", { replace: true });
     } else {
-      navigate("/user", { replace: true });
+      navigate("/home", { replace: true });
     }
   };
   return <>hello</>;

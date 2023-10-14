@@ -52,7 +52,9 @@ const QuestionAdd = () => {
       })
       .then((data) => {
         console.log(data);
-        navigate("/admin/question", { replace: true });
+        navigate("/admin/questions", {
+          replace: true,
+        });
       });
   }
 

@@ -1,17 +1,20 @@
 import React from "react";
 
-const ExamHeader = (props) => {
-  console.log(props);
+const ExamHeader = ({ arin, poCurrent, inc, exTitle, sen }) => {
+  console.log(arin);
+  console.log(poCurrent);
   return (
     <div className="row" style={{ height: "10%" }}>
       <div className="col-6 pt-5">
         <div className="d-flex justify-content-between">
           <h5>Select one answer</h5>
-          {props.poCurrent == props.arin ? (
-            <button className="btn btn-dark text-light">انهاء الاختبار</button>
+          {poCurrent === arin ? (
+            <button className="btn btn-dark text-light" onClick={sen}>
+              انهاء الاختبار
+            </button>
           ) : (
             <button
-              onClick={props.inc}
+              onClick={inc}
               type="button"
               className="btn btn-dark text-light"
             >
@@ -21,11 +24,7 @@ const ExamHeader = (props) => {
         </div>
       </div>
       <div className="col-6 pt-5 border-start h-100">
-        {props.exTitle == "preExam" ? (
-          <h3>امتحان قبلى</h3>
-        ) : (
-          <h3>{props.exTitle}</h3>
-        )}
+        {exTitle === "preExam" ? <h3>امتحان قبلى</h3> : <h3>{exTitle}</h3>}
       </div>
     </div>
   );
