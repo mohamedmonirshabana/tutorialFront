@@ -6,11 +6,13 @@ const AddTrack = () => {
   const token = localStorage.getItem("token");
   const title = useRef();
   const about = useRef();
+  const typeoftrack = useRef();
   function submitHandler(event) {
     event.preventDefault();
     const Data = {
       trackname: title.current.value,
       about: about.current.value,
+      tags: typeoftrack.current.value,
     };
 
     fetch("http://localhost:8000/admin/track/add", {
@@ -41,6 +43,14 @@ const AddTrack = () => {
           className="form-control"
           id="TrackName"
         />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="tacktag">نوع المسار</label>
+        <select id="tacktag" className="form-control" ref={typeoftrack}>
+          <option value="0">اختر</option>
+          <option value="2D">2D</option>
+          <option value="3D">3D</option>
+        </select>
       </div>
       <div className="mb-3">
         <label className="form-label" htmlFor="AboutTrack">

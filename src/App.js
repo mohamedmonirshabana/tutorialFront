@@ -35,9 +35,12 @@ import AddLibrary from "./pages/admin/library/AddLibrary";
 // import Logout from "./components/auth/Logout";
 import Home from "./pages/user/Home";
 import PreExam from "./pages/user/PreExam";
+import PreExamD from "./pages/user/PreExamD";
 import UserFirstTimepage from "./pages/user/UserFirstTimepage";
 import Choose from "./pages/user/Choose";
 import PreExamResult from "./pages/user/PreExamResult";
+import ShowTrack2D from "./pages/track/ShowTrack2D";
+import ShowTrack3D from "./pages/track/ShowTrack3D";
 const App = () => {
   return (
     <div>
@@ -81,10 +84,13 @@ const App = () => {
         />
         <Route path="/admin/library/add" element={<AddLibrary />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/choose" element={<Choose />} />
         <Route path="/firsttime" element={<UserFirstTimepage />} />
+        <Route path="/choose" element={<Choose />} />
         <Route path="/preexam2d" element={<PreExam />} />
+        <Route path="/preexam3d" element={<PreExamD />} />
         <Route path="/prerxamresult/:archive" element={<PreExamResult />} />
+        <Route path="/track/track2d" element={<ShowTrack2D />} />
+        <Route path="/track/track3d" element={<ShowTrack3D />} />
       </Routes>
     </div>
   );

@@ -58,7 +58,7 @@ const ShowExamResult = (props) => {
         </div>
       </div>
       {examtitle && examtitle == "preExam2D" ? (
-        <Link to="/track2D" className="get-started-btn">
+        <Link to="/track/track2d" className="get-started-btn">
           مسار 2D
         </Link>
       ) : (
