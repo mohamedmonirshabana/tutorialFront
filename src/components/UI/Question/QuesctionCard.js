@@ -2,7 +2,7 @@ import React from "react";
 
 const QuestionCard = (props) => {
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card mx-3" style={{ width: "18rem" }}>
       {props.imgurl ? (
         <img src={props.imgurl} className="card-img-top" alt="..." />
       ) : (

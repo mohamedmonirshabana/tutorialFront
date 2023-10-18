@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AccountSection from "./AccountSection";
+import othLogo from "./other.jpeg";
 const Nav = () => {
   return (
     <>
@@ -40,6 +41,14 @@ const Nav = () => {
             <Link className="active" to="/">
               الرئيسية
             </Link>
+          </li>
+          <li>
+            <img
+              src={othLogo}
+              className="img-fluid"
+              style={{ width: "15px" }}
+              alt=""
+            />
           </li>
         </ul>
         <i className="bi bi-list mobile-nav-toggle"></i>

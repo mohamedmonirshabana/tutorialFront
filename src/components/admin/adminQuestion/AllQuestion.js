@@ -18,7 +18,7 @@ const AllQuestion = () => {
           <div className="row">
             <div className="container mt-5">
               <div className="row">
-                <div className=" " style={{ width: "50%" }}>
+                <div className=" w-100 d-flex flex-wrap">
                   <Questions />
                 </div>
               </div>

@@ -41,6 +41,8 @@ import Choose from "./pages/user/Choose";
 import PreExamResult from "./pages/user/PreExamResult";
 import ShowTrack2D from "./pages/track/ShowTrack2D";
 import ShowTrack3D from "./pages/track/ShowTrack3D";
+import Enroll from "./pages/track/Enroll";
+import Signout from "./pages/Signout";
 const App = () => {
   return (
     <div>
@@ -49,6 +51,7 @@ const App = () => {
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgetPassword" element={<Forgetpass />} />
+        <Route path="/logout" element={<Signout />} />
         <Route path="/newpassword/:code" element={<RecoverPass />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/student/all" element={<AdminAllStudent />} />
@@ -91,6 +94,7 @@ const App = () => {
         <Route path="/prerxamresult/:archive" element={<PreExamResult />} />
         <Route path="/track/track2d" element={<ShowTrack2D />} />
         <Route path="/track/track3d" element={<ShowTrack3D />} />
+        <Route path="/track/enroll/:trackid" element={<Enroll />} />
       </Routes>
     </div>
   );
