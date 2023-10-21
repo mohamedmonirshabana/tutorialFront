@@ -15,7 +15,7 @@ const AdminDashboard = () => {
   return (
     <>
       <AdminHeader />
-      <div className="container-fluid">
+      {/* <div className="container-fluid">
         <div className="row">
           <div className="col-2">
             <AdminSide />
@@ -24,9 +24,9 @@ const AdminDashboard = () => {
             <h1>welcome</h1>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <SpecialFooter /> */}
-      <GeneralFooter />
+      {/* <GeneralFooter /> */}
     </>
   );
 };

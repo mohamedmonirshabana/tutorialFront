@@ -3,67 +3,58 @@ import { Link } from "react-router-dom";
 
 const ExamCard = (props) => {
   const resu = props.active;
+  const myDate = new Date(props.exDate);
+  const Year = myDate.getFullYear();
+  const month = myDate.getMonth();
+  const d = myDate.getDate();
   return (
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">{props.Examname}</h5>
-        <p className="card-text">
-          {resu ? "الامتحان مفعل" : "الامتحان غير مفعل"}
-          <br />
-          {resu ? (
-            <Link to={`/admin/examdeactive/${props.exid}`}>
-              الغاء تفعيل الامتحان
-            </Link>
-          ) : (
-            <Link to={`/admin/examactive/${props.exid}`}>تفعيل الامتحان</Link>
-          )}
-        </p>
-        <ol className="list-group list-group-numbered">
-          <li className="list-group-item d-flex justify-content-between align-items-start">
-            <div className="ms-2 me-auto">
-              <div className="fw-bold">درجة الامتحان</div>
-              الدرجة النهائية للامتحان
-            </div>
-            <span className="badge bg-primary rounded-pill">
-              {props.examdegree}
-            </span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between align-items-start">
-            <div className="ms-2 me-auto">
-              <div className="fw-bold">نسبة النجاح للطالب</div>
-              نسبة النجاح للطالب
-            </div>
-            <span className="badge bg-primary rounded-pill">
-              %{props.sucesspers}
-            </span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between align-items-start">
-            <div className="ms-2 me-auto">
-              <div className="fw-bold">عدد الاسئلة للاختبار</div>
-              ما يتم عرضة امام الطالب
-            </div>
-            <span className="badge bg-primary rounded-pill">
-              {props.qcount}
-            </span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between align-items-start">
-            <div className="ms-2 me-auto">
-              <div className="fw-bold">عدد الاسئلة الاجمالى</div>
-              كل الاسئلة فى الامتحان
-            </div>
-            <span className="badge bg-primary rounded-pill">
-              {props.excount}
-            </span>
-          </li>
-        </ol>
-        <Link to={`/admin/examdelete/${props.exid}`} className="btn btn-danger">
-          حذف الامتحان
+    <tr>
+      <td className="d-none d-xl-table-cell">
+        <Link to={`/admin/questions/${props.exid}`}>{props.Examname}</Link>
+      </td>
+      <td className="d-none d-xl-table-cell">
+        <Link>{props.examdegree}</Link>
+      </td>
+      <td className="d-none d-xl-table-cell">
+        <Link>{props.sucesspers}%</Link>
+      </td>
+      <td className="d-none d-xl-table-cell">
+        <Link>{props.excount}</Link>
+      </td>
+      <td className="d-none d-xl-table-cell">
+        {props.active ? (
+          <Link
+            to={`/admin/examdeactive/${props.exid}`}
+            className="badge bg-danger"
+          >
+            غير مفعل
+          </Link>
+        ) : (
+          <Link
+            to={`/admin/examactive/${props.exid}`}
+            className="badge bg-success"
+          >
+            مفعل
+          </Link>
+        )}
+      </td>
+      <td className="d-none d-xl-table-cell">{`${Year}-${month}-${d}`}</td>
+      <td className="d-none d-xl-table-cell">
+        <Link to={`/admin/question/add/${props.exid}`}> اضافة اسئلة </Link>
+      </td>
+      <td className="d-none d-xl-table-cell">
+        <Link
+          to={`/admin/examdelete/${props.exid}`}
+          className="badge bg-danger"
+        >
+          حذف{" "}
+          <span
+            className=" trash-2
+"
+          ></span>
         </Link>
-        <Link to="" className="">
-          اضافة اسئلة
-        </Link>
-      </div>
-    </div>
+      </td>
+    </tr>
   );
 };
 

@@ -1,14 +1,16 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import AddQuestion from "../../../components/admin/adminQuestion/AddQuestion";
 import AdminHeader from "../../../components/general/header/AdminHeader";
-import GeneralFooter from "../../../components/general/footer/GeneralFooter";
 
 const QuestionAdd = () => {
+  const params = useParams();
+  const { examid } = params;
   return (
     <>
-      <AdminHeader />
-      <AddQuestion />
-      <GeneralFooter />
+      <AdminHeader>
+        <AddQuestion exam={examid} />
+      </AdminHeader>
     </>
   );
 };

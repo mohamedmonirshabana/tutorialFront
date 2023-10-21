@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import GetExam from "./GetExam";
 import GetVideo from "./GetVideo";
 
-const QuestionAdd = () => {
+const QuestionAdd = (props) => {
   let navigate = useNavigate();
   const token = localStorage.getItem("token");
   const [image, setImage] = useState();
@@ -40,7 +40,7 @@ const QuestionAdd = () => {
     formData.append("degree", qDegree.current.value);
     formData.append("video", vide);
 
-    fetch(`http://localhost:8000/admin/question/add/${exid}`, {
+    fetch(`http://localhost:8000/admin/question/add/${props.exid}`, {
       method: "POST",
       body: formData,
       headers: {
@@ -61,9 +61,7 @@ const QuestionAdd = () => {
   return (
     <>
       <form onSubmit={submitQuestionForm}>
-        <div className="mb-3">
-          <GetExam examID={examID} />
-        </div>
+        <div className="mb-3">{/* <GetExam examID={examID} /> */}</div>
         <div className="mb-3">
           <label className="form-label" htmlFor="questTitle">
             السؤال

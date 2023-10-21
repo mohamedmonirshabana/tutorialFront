@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Signin from "./pages/auth/Signin";
@@ -43,7 +43,10 @@ import ShowTrack2D from "./pages/track/ShowTrack2D";
 import ShowTrack3D from "./pages/track/ShowTrack3D";
 import Enroll from "./pages/track/Enroll";
 import Signout from "./pages/Signout";
+// import { Helmet } from "react-helmet";
+// import useScript from "./hooks/useScript";
 const App = () => {
+  // useScript("js/jsapp.js");
   return (
     <div>
       <Routes>
@@ -61,8 +64,8 @@ const App = () => {
         <Route path="/admin/examactive/:examid" element={<ExamActive />} />
         <Route path="/admin/examdeactive/:examid" element={<ExamDeactive />} />
         <Route path="/admin/examdelete/:examid" element={<ExamDelete />} />
-        <Route path="/admin/question/add" element={<QuestionAdd />} />
-        <Route path="/admin/questions" element={<QuestionAll />} />
+        <Route path="/admin/question/add/:examid" element={<QuestionAdd />} />
+        <Route path="/admin/questions/:examid" element={<QuestionAll />} />
         <Route
           path="/admin/question/delete/:qid"
           element={<QuestionDelete />}

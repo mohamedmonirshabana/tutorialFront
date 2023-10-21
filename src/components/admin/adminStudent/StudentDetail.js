@@ -19,26 +19,22 @@ const StudentDetail = (props) => {
       }
     );
     const data = await response.json();
-    console.log(data);
     setStudent(data);
   };
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-2">
-          <AdminSide />
-        </div>
-        <div className="col-10">
-          <div className="d-fex flex-md-row">
-            <StudentD
-              name={student.fullName}
-              firstTime={student.firstTime}
-              cdate={student.createdAt}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <main className="content">
+      <StudentD
+        key={student._id}
+        id={student._id}
+        name={student.fullName}
+        email={student.email}
+        firstTime={student.firstTime}
+        cdate={student.createdAt}
+        active={student.active}
+        prexam={student.prexam}
+        exam={student.exams}
+      />
+    </main>
   );
 };
 

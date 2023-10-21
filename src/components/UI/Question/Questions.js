@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react";
 import QuestionCard from "./QuesctionCard";
 
-const Questions = () => {
+const Questions = (props) => {
   const token = localStorage.getItem("token");
   const [questions, setQuestions] = useState([]);
   useEffect(() => {
     questionData();
   }, []);
   const questionData = async () => {
-    const respon = await fetch("http://localhost:8000/admin/question/all", {
-      method: "GET",
-      headers: {
-        Authorization: `${token}`,
-      },
-    });
+    const respon = await fetch(
+      `http://localhost:8000/admin/questions/${props.exid}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `${token}`,
+        },
+      }
+    );
     const Data = await respon.json();
     setQuestions(Data);
   };
@@ -26,10 +29,12 @@ const Questions = () => {
       ) : (
         questions.map((question) => (
           <QuestionCard
-            key={question._id}
-            title={question.questionTitle}
+            key={question.id}
+            title={question.title}
+            typ={question.type}
+            degree={question.Degree}
             id={question._id}
-            answercount={question.questionAnswer.length}
+            answeres={question.answeres}
           />
         ))
       )}

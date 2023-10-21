@@ -4,22 +4,13 @@ import AdminSide from "../adminGeneral/AdminSide";
 
 const AddExam = () => {
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-2">
-          <AdminSide />
+    <div className="card">
+      <div className="card">
+        <div className="card-header">
+          <h5 className="card-title mb-0">اضافة امتحان</h5>
         </div>
-        <div className="col-10">
-          <div className="container-fluid mt-3">
-            <div className="row">
-              <div className="col-2"></div>
-            </div>
-          </div>
-          <div className="row mt-3">
-            <div className="d-fex flex-md-row">
-              <ExamCreate />
-            </div>
-          </div>
+        <div className="card-body">
+          <ExamCreate />
         </div>
       </div>
     </div>

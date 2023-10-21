@@ -2,20 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const StudentCard = (props) => {
+  const joinDate = new Date(props.create);
+  const year = joinDate.getFullYear();
+  const month = joinDate.getMonth();
+  const da = joinDate.getDate();
   return (
-    <div className="card" style={{ width: "18rem" }}>
-      <div className="card-body">
-        <h5 className="card-title">{props.name}</h5>
-        <h6 className="card-subtitle mb-2 text-body-secondary">Student</h6>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <Link to={`/admin/student/${props.id}`} className="card-link">
-          بينات الطالب
-        </Link>
-      </div>
-    </div>
+    <tr>
+      <td className="d-none d-xl-table-cell">
+        <Link to={`/admin/student/${props.id}`}>{props.name}</Link>
+      </td>
+      <td className="d-none d-xl-table-cell">
+        <Link to={`mailto:${props.email}`}>{props.email}</Link>
+      </td>
+      <td>
+        {props.active ? (
+          <Link to={`/student/deactive/${props.id}`}>مفعل</Link>
+        ) : (
+          <Link to={`/student/active/${props.id}`}>غير مفعل</Link>
+        )}
+      </td>
+      <td>{`${year}-${month}-${da}`}</td>
+    </tr>
   );
 };
 
