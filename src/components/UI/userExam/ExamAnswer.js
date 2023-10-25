@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import AnswerCard from "./AnswerCard";
 
 const ExamAnswer = ({ answerssend, getid }) => {
   console.log(answerssend);
-  const [ans, setAns] = useState([{}]);
+  // const [ans, setAns] = useState([{}]);
   const myAr = ["A", "B", "C", "D"];
   const getAnswer = () => {
-    setAns();
+    // setAns();
     // setArcou(-1);
   };
   useEffect(() => {

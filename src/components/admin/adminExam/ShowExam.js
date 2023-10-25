@@ -26,6 +26,10 @@ const ShowExam = () => {
     setShowadd(true);
   }
 
+  function Clos() {
+    setShowadd(false);
+  }
+
   return (
     <>
       <div className="row mt-2">
@@ -48,7 +52,7 @@ const ShowExam = () => {
       <div className="row mt-2">
         {showadd ? (
           <div className="col-12">
-            <AddExam />
+            <AddExam evn={Clos} />
           </div>
         ) : (
           <> </>

@@ -1,60 +1,60 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ExamBody from "./ExamBody";
-import ExamStart from "./ExamStart";
+// import ExamStart from "./ExamStart";
 
-const ExamD = [
-  {
-    id: 1,
-    question: {
-      id: 801,
-      questext: "What is photo shop",
-    },
-    answers: [
-      {
-        id: 901,
-        questitle: "A good one",
-      },
-      {
-        id: 902,
-        questitle: "A another  one",
-      },
-      {
-        id: 903,
-        questitle: "A good thing",
-      },
-      {
-        id: 904,
-        questitle: "A good Choose",
-      },
-    ],
-  },
-  {
-    id: 2,
-    question: {
-      id: 802,
-      questext: "another Question",
-    },
-    answers: [
-      {
-        id: 905,
-        questitle: "A good Another",
-      },
-      {
-        id: 906,
-        questitle: "A another  Two One",
-      },
-      {
-        id: 907,
-        questitle: "A good thing",
-      },
-      {
-        id: 908,
-        questitle: "A good Choose",
-      },
-    ],
-  },
-];
+// const ExamD = [
+//   {
+//     id: 1,
+//     question: {
+//       id: 801,
+//       questext: "What is photo shop",
+//     },
+//     answers: [
+//       {
+//         id: 901,
+//         questitle: "A good one",
+//       },
+//       {
+//         id: 902,
+//         questitle: "A another  one",
+//       },
+//       {
+//         id: 903,
+//         questitle: "A good thing",
+//       },
+//       {
+//         id: 904,
+//         questitle: "A good Choose",
+//       },
+//     ],
+//   },
+//   {
+//     id: 2,
+//     question: {
+//       id: 802,
+//       questext: "another Question",
+//     },
+//     answers: [
+//       {
+//         id: 905,
+//         questitle: "A good Another",
+//       },
+//       {
+//         id: 906,
+//         questitle: "A another  Two One",
+//       },
+//       {
+//         id: 907,
+//         questitle: "A good thing",
+//       },
+//       {
+//         id: 908,
+//         questitle: "A good Choose",
+//       },
+//     ],
+//   },
+// ];
 
 const Exam = ({
   examid,

@@ -1,23 +1,17 @@
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import GetCourses from "../../UI/Courses/GetCourses";
+import { Link } from "react-router-dom";
 
-const AddVideo = () => {
-  let navigate = useNavigate();
+const AddVideo = (props) => {
   const token = localStorage.getItem("token");
   const inputRef = useRef();
   const title = useRef();
   const [video, setVideo] = useState();
-  const [courid, setCourid] = useState();
 
   const HandleImageChange = (event) => {
     event.preventDefault();
+
     setVideo(event.target.files[0]);
   };
-
-  function getCour(id) {
-    setCourid(id);
-  }
 
   function addvideoData(event) {
     event.preventDefault();
@@ -25,7 +19,7 @@ const AddVideo = () => {
     const formData = new FormData();
     formData.append("title", title.current.value);
     formData.append("videofile", video);
-    fetch(`http://localhost:8000/admin/video/add/${courid}`, {
+    fetch(`http://localhost:8000/admin/video/add/${props.course}`, {
       method: "POST",
       body: formData,
       headers: {
@@ -36,38 +30,51 @@ const AddVideo = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
-        navigate("/admin/video/all", {
-          replace: true,
-        });
+        window.location.reload(false);
       });
   }
+
+  function hide() {
+    props.env();
+  }
   return (
-    <form onSubmit={addvideoData}>
-      <div className="mb-3">
-        <GetCourses courID={getCour} />
+    <div className="card">
+      <div className="card-header">
+        <h5 className="float-end">
+          <Link onClick={hide}>X</Link>
+        </h5>
+        <h5 className="card-title">اضافة فيديو</h5>
       </div>
-      <div className="mb-3">
-        <label className="form-label" htmlFor="vtitle">
-          عنوان الفيدو
-        </label>
-        <input type="text" id="vtitle" ref={title} className="form-control" />
+      <div className="card-body">
+        <form onSubmit={addvideoData}>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="vtitle">
+              عنوان الفيدو
+            </label>
+            <input
+              type="text"
+              id="vtitle"
+              ref={title}
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="vfile">
+              ملف الفيديو
+            </label>
+            <input
+              type="file"
+              id="vfile"
+              ref={inputRef}
+              onChange={HandleImageChange}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            اضافة الفيديو
+          </button>
+        </form>
       </div>
-      <div className="mb-3">
-        <label className="form-label" htmlFor="vfile">
-          ملف الفيديو
-        </label>
-        <input
-          type="file"
-          id="vfile"
-          ref={inputRef}
-          onChange={HandleImageChange}
-        />
-      </div>
-      <button type="submit" className="btn btn-primary">
-        اضافة الفيديو
-      </button>
-    </form>
+    </div>
   );
 };
 

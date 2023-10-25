@@ -15,6 +15,7 @@ const DeleteExam = (props) => {
     });
 
     const data = await response.json();
+    console.log(data);
     navigate("/admin/exam", {
       replace: true,
     });

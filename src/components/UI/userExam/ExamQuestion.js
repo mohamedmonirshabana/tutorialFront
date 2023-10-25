@@ -10,6 +10,7 @@ const ExamQuestion = ({ qtxt }) => {
   useEffect(() => {
     getQuestText();
   }, []);
+  console.log(que);
   return (
     <div className="col-6  border-start  h-100">
       <div className="d-flex flex-column pt-5 justify-content-between h-75">

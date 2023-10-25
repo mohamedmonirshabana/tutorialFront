@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const DeleteCourse = (props) => {
@@ -24,7 +24,7 @@ const DeleteCourse = (props) => {
       });
     }
   };
-  return <> Hello </>;
+  // return <> Hello </>;
 };
 
 export default DeleteCourse;

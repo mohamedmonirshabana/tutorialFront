@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import AdminSide from "../adminGeneral/AdminSide";
+
 import StudentD from "../adminGeneral/StudentD";
 const StudentDetail = (props) => {
   const [student, setStudent] = useState({});

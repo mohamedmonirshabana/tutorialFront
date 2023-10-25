@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import { Helmet } from "react-helmet";
 // import "./app.css";
-import avatar2 from "./avatars/avatar-2.jpg";
-import avatar3 from "./avatars/avatar-3.jpg";
-import avatar4 from "./avatars/avatar-4.jpg";
-import avatar5 from "./avatars/avatar-5.jpg";
-import avatar from "./avatars/avatar.jpg";
+// import avatar2 from "./avatars/avatar-2.jpg";
+// import avatar3 from "./avatars/avatar-3.jpg";
+// import avatar4 from "./avatars/avatar-4.jpg";
+// import avatar5 from "./avatars/avatar-5.jpg";
+// import avatar from "./avatars/avatar.jpg";
 import AdminBar from "./AdminBar";
+// import myScriptjs from "./jsapp.js";
 
 const AdminHeader = (props) => {
   return (
@@ -66,11 +67,11 @@ const AdminHeader = (props) => {
                 <span className="align-middle">الامتحانات كلها</span>
               </Link>
             </li>
-
+            <li className="sidebar-header">المسارات</li>
             <li className="sidebar-item">
-              <Link className="sidebar-link" to="maps-google.html">
-                <i className="align-middle" data-feather="map"></i>
-                <span className="align-middle">Maps</span>
+              <Link className="sidebar-link" to="/admin/track">
+                <i className="align-middle" data-feather="bar-chart-2"></i>
+                <span className="align-middle">المسارات كلها</span>
               </Link>
             </li>
           </ul>
@@ -122,46 +123,3 @@ const AdminHeader = (props) => {
 };
 
 export default AdminHeader;
-
-// <nav className="navbar navbar-expand-lg bg-body-tertiary">
-//   <div className="container-fluid">
-//     <Link to="/admin" className="navbar-brand">
-//       لوحة التحكم
-//     </Link>
-//     <button
-//       className="navbar-toggler"
-//       type="button"
-//       data-bs-toggle="collapse"
-//       data-bs-target="#navbarText"
-//       aria-controls="navbartext"
-//       aria-expanded="false"
-//       aria-label="Toggle navigation"
-//     >
-//       <span className="navbar-toggler-icon"></span>
-//     </button>
-//     <div className="collapse navbar-collapse" id="navbarText">
-//       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-//         <li className="nav-item">
-//           <Link
-//             className="nav-link active"
-//             aria-current="page"
-//             to=""
-//             onClick={logout}
-//           >
-//             تسجيل خروج
-//           </Link>
-//         </li>
-//         <li className="nav-item">
-//           {/* <Link className="nav-link" to="/">
-//             Features
-//           </Link> */}
-//         </li>
-//         <li className="nav-item">
-//           {/* <Link className="nav-link" to="/">
-//             Pricing
-//           </Link> */}
-//         </li>
-//       </ul>
-//     </div>
-//   </div>
-// </nav>

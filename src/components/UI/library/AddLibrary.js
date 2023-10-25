@@ -2,16 +2,13 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import GetCourses from "../Courses/GetCourses";
 
-const AddLibrary = () => {
+const AddLibrary = ({ id }) => {
   let navigate = useNavigate();
   const token = localStorage.getItem("token");
   const libTitle = useRef();
   const liburl = useRef();
   const libdesc = useRef();
-  const [courseid, setCourseid] = useState();
-  function getcourse(id) {
-    setCourseid(id);
-  }
+
   function create(event) {
     event.preventDefault();
     const Data = {
@@ -19,7 +16,7 @@ const AddLibrary = () => {
       url: liburl.current.value,
       desc: libdesc.current.value,
     };
-    fetch(`http://localhost:8000/admin/library/${courseid}`, {
+    fetch(`http://localhost:8000/admin/library/${id}`, {
       method: "POST",
       body: JSON.stringify(Data),
       headers: {
@@ -31,15 +28,13 @@ const AddLibrary = () => {
         return respon.json();
       })
       .then((dat) => {
-        navigate("/admin/library", { replace: true });
+        window.location.reload(false);
+        // navigate("/admin/library", { replace: true });
       });
   }
 
   return (
     <form onSubmit={create}>
-      <div className="mb-3">
-        <GetCourses courID={getcourse} />
-      </div>
       <div className="mb-3">
         <label className="form-label" htmlFor="intitle">
           العنوان

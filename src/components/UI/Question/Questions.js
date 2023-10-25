@@ -27,14 +27,14 @@ const Questions = (props) => {
           No Question
         </div>
       ) : (
-        questions.map((question) => (
+        questions.map((question, idx) => (
           <QuestionCard
             key={question.id}
+            num={idx + 1}
             title={question.title}
             typ={question.type}
             degree={question.Degree}
-            id={question._id}
-            answeres={question.answeres}
+            id={question.id}
           />
         ))
       )}

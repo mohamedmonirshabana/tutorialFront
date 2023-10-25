@@ -1,17 +1,14 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import GetExam from "./GetExam";
 import GetVideo from "./GetVideo";
 
 const QuestionAdd = (props) => {
   let navigate = useNavigate();
   const token = localStorage.getItem("token");
   const [image, setImage] = useState();
-  const [exid, setExid] = useState("");
+
   // let exid;
-  function examID(id) {
-    setExid(id);
-  }
+
   let vide = null;
   function videoid(id) {
     vide = id;

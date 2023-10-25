@@ -9,7 +9,7 @@ const AnswerCard = ({ answertitle, sidechar, id, test, kid }) => {
     if (myData.current.checked) {
       event.preventDefault();
       console.log(myData.current.value);
-      const ID = parseInt(myData.current.value);
+      // const ID = parseInt(myData.current.value);
       kid(myData.current.value);
     }
   }

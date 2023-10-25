@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const UserFirstTime = () => {
@@ -23,7 +23,7 @@ const UserFirstTime = () => {
       navigate("/home", { replace: true });
     }
   };
-  return <>hello</>;
+  // return <>hello</>;
 };
 
 export default UserFirstTime;

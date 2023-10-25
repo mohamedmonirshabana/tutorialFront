@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ExamCard = (props) => {
-  const resu = props.active;
+  // const resu = props.active;
   const myDate = new Date(props.exDate);
   const Year = myDate.getFullYear();
   const month = myDate.getMonth();
@@ -47,7 +47,7 @@ const ExamCard = (props) => {
           to={`/admin/examdelete/${props.exid}`}
           className="badge bg-danger"
         >
-          حذف{" "}
+          حذف
           <span
             className=" trash-2
 "

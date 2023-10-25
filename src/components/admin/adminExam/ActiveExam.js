@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const ActiveExam = (props) => {
@@ -18,7 +18,7 @@ const ActiveExam = (props) => {
       console.log(data);
       navigate("/admin/exam", { replace: true });
     });
-  return <>Hello</>;
+  // return <>Hello</>;
 };
 
 export default ActiveExam;

@@ -19,19 +19,3 @@ const AddQuestion = (props) => {
 };
 
 export default AddQuestion;
-
-{
-  /* <div className="container-fluid">
-      <div className="row">
-        <div className="col-2">
-        </div>
-        <div className="col-10">
-          <div className="row">
-            <div className="container mt-5">
-              <QuestionAdd />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> */
-}

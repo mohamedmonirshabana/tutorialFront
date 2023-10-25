@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Signin from "./pages/auth/Signin";
@@ -43,6 +43,9 @@ import ShowTrack2D from "./pages/track/ShowTrack2D";
 import ShowTrack3D from "./pages/track/ShowTrack3D";
 import Enroll from "./pages/track/Enroll";
 import Signout from "./pages/Signout";
+import CourseTrack from "./pages/admin/track/CourseTrack";
+import CourseDetails from "./pages/admin/course/CourseDetails";
+import Video from "./pages/admin/video/Video";
 // import { Helmet } from "react-helmet";
 // import useScript from "./hooks/useScript";
 const App = () => {
@@ -75,11 +78,15 @@ const App = () => {
         <Route path="/admin/track/add" element={<AddTrack />} />
         <Route path="/admin/track/:trackid" element={<RemoveTrack />} />
         <Route path="/admin/courses" element={<CourseAll />} />
+        <Route path="/admin/track/course/:tid" element={<CourseTrack />} />
+        <Route path="/admin/course/details/:cid" element={<CourseDetails />} />
         <Route path="/admin/course/:cid" element={<CourseDelete />} />
-        <Route path="/admin/course/add" element={<AddCourse />} />
+
+        <Route path="/admin/course/add/:trackid" element={<AddCourse />} />
         <Route path="/admin/video/all" element={<ShowVideo />} />
         <Route path="/admin/video/add" element={<Addvideo />} />
         <Route path="/admin/video/delete/:vid" element={<Delete />} />
+        <Route path="/admin/course/video/show/:vid" element={<Video />} />
         <Route path="/admin/activities" element={<ShowActivities />} />
         <Route path="/admin/activity/add" element={<AddActivity />} />
         <Route path="/admin/active/delete/:actid" element={<ActDelete />} />

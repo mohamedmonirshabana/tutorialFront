@@ -35,6 +35,7 @@ const ShowExamResult = (props) => {
 
   useEffect(() => {
     getData();
+    navigate("/admin", { replace: true });
   }, []);
 
   return (
@@ -57,7 +58,7 @@ const ShowExamResult = (props) => {
           <h2>{degree}</h2>
         </div>
       </div>
-      {examtitle && examtitle == "preExam2D" ? (
+      {examtitle && examtitle === "preExam2D" ? (
         <Link to="/track/track2d" className="get-started-btn">
           مسار 2D
         </Link>

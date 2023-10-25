@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 const DeleteVideo = () => {
   let navigate = useNavigate();
@@ -20,7 +20,7 @@ const DeleteVideo = () => {
       navigate("/admin/video/all", { replace: true });
     }
   };
-  return <>hello</>;
+  // return <>hello</>;
 };
 
 export default DeleteVideo;

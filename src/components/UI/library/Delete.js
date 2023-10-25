@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const Delete = () => {
@@ -17,10 +17,11 @@ const Delete = () => {
       },
     });
     const data = await repon.json();
-    console.log(data);
-    navigate("/admin/library", { replace: true });
+    window.location.reload(false);
+    // console.log(data);
+    navigate("/admin/track", { replace: true });
   };
-  return <>hello</>;
+  // return <>hello</>;
 };
 
 export default Delete;

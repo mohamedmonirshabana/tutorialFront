@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const DeleteTrack = (props) => {
@@ -22,7 +22,6 @@ const DeleteTrack = (props) => {
       navigate("/admin/track", { replace: true });
     }
   };
-  return <>helllo</>;
 };
 
 export default DeleteTrack;

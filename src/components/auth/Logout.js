@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
@@ -10,7 +10,7 @@ const Logout = () => {
     localStorage.removeItem("userName");
     navigate("/", { replace: true });
   }, []);
-  return <>logout</>;
+  // return <>logout</>;
 };
 
 export default Logout;

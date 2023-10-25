@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const EnrollTrack = () => {
   const token = localStorage.getItem("token");
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const params = useParams();
   const { trackid } = params;
   const enroll = async () => {

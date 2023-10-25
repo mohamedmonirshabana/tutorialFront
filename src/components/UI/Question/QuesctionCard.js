@@ -1,54 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import QuestionAnswers from "./QuestionAnswers";
+import AnswerToAdd from "../../UI/answers/AnswerToAdd";
 
-const QuestionCard = (props) => {
+const QuestionCard = ({ title, typ, degree, id, answeres, num }) => {
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [showAddPanel, setShowAddPanel] = useState(false);
+  function changes() {
+    setShowAnswer(true);
+  }
+  function clos() {
+    setShowAnswer(false);
+  }
+
+  function AddPanel() {
+    setShowAddPanel(true);
+  }
+
+  function hidePanel() {
+    setShowAddPanel(false);
+  }
+
   return (
     <>
-      <div className="d-flex align-items-start">
-        <div className="flex-grow-1">
-          <small className="float-end text-navy">Degree: {props.degree}</small>
-          <strong>{props.title}</strong>
-          <br />
+      <div className="row" dir="rtl">
+        <div className="col-11 mx-auto mt-1">
+          <div className="card">
+            <div className="card-header">
+              <h5 className="card-title mb-0">السؤال{num}:</h5>
+            </div>
+            <div className="card-body">
+              <strong>{title}؟</strong>
+              <br />
+              <strong> الدرجة:{degree}</strong>
+              &nbsp;
+              <strong>نوع السؤال: {typ}</strong>
+              <hr />
+              <div className="d-flex  ">
+                <Link to="" className="mx-2" onClick={changes}>
+                  الاجابات
+                </Link>
+                <Link to={`/admin/question/delete/${id}`} className="mx-2">
+                  حذف
+                </Link>
+                <Link className="mx-2" onClick={AddPanel}>
+                  اضافة اجابة
+                </Link>
+              </div>
+              {showAnswer ? <QuestionAnswers qid={id} ev={clos} /> : <></>}
+            </div>
+          </div>
         </div>
       </div>
+      {showAddPanel ? <AnswerToAdd id={id} clo={hidePanel} /> : <></>}
     </>
   );
 };
 
 export default QuestionCard;
-
-// <div className="card mx-3" style={{ width: "18rem" }}>
-//       {props.imgurl ? (
-//         <img src={props.imgurl} className="card-img-top" alt="..." />
-//       ) : (
-//         <></>
-//       )}
-
-//       <div className="card-body">
-//         <h5 className="card-title">{props.title}</h5>
-//         <p className="card-text">Question Answer is {props.answercount}</p>
-//         <div className="btn-group" role="group" aria-label="Basic example">
-//           <a
-//             href={`/admin/question/delete/${props.id}`}
-//             className="btn btn-danger"
-//           >
-//             حذف السؤال
-//           </a>
-//           <a href={`/admin/answer/add/${props.id}`} className="btn btn-primary">
-//             اضافة اجابة
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-
-//  <tr>
-//       <td dir="rtl">
-//         <Link to={`/admin/question/${props.id}`}>{props.title}</Link>
-//       </td>
-//       <td>{props.typ}</td>
-//       <td>none</td>
-//       <td>{props.degree}</td>
-//       <td>
-//         <Link to={`/admin/question/delete/${props.id}`}>حذف</Link>
-//       </td>
-//     </tr>

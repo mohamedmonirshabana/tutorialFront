@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const ExamCreate = () => {
   const token = localStorage.getItem("token");
-  let navigate = useNavigate();
+
   const eName = useRef();
   const eDegree = useRef();
   const sucPersnet = useRef();

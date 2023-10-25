@@ -1,21 +1,19 @@
-import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import GetCourses from "../../UI/Courses/GetCourses";
+import React, { useRef } from "react";
+// import { useNavigate } from "react-router-dom";
+// import GetCourses from "../../UI/Courses/GetCourses";
 
-const AddActivity = () => {
-  let navigate = useNavigate();
+const AddActivity = (props) => {
+  // console.log("couid", props.id);
+  // let navigate = useNavigate();
   const token = localStorage.getItem("token");
   const atitle = useRef();
-  const [courid, setCourid] = useState();
-  function getCour(id) {
-    setCourid(id);
-  }
 
-  function addActive() {
+  function addActive(event) {
+    event.preventDefault();
     const Data = {
       title: atitle.current.value,
     };
-    fetch(`http://localhost:8000/admin/activity/add/${courid}`, {
+    fetch(`http://localhost:8000/admin/activity/add/${props.id}`, {
       method: "POST",
       body: JSON.stringify(Data),
       headers: {
@@ -26,15 +24,14 @@ const AddActivity = () => {
       .then((response) => {
         return response.json();
       })
-      .then((data) => {});
-    navigate("/admin/activities", { replace: true });
+      .then((data) => {
+        console.log(data);
+        window.location.reload(false);
+      });
   }
 
   return (
     <form onSubmit={addActive}>
-      <div className="mb-3">
-        <GetCourses courID={getCour} />
-      </div>
       <div className="mb-3">
         <label className="form-label" htmlFor="actitle">
           النشاط

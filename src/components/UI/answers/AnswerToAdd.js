@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AnswerToAdd = (props) => {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const [ansImage, setAnsImage] = useState();
   // const [qid, setQid] = useState("");
   const AnsTitle = useRef();
@@ -35,82 +35,108 @@ const AnswerToAdd = (props) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data.status);
-        navigate("/admin/questions", { replace: true });
+        window.location.reload(false);
+        // console.log(data.status);
+        // navigate("/admin/questions", { replace: true });
       });
+  }
+  function CL() {
+    props.clo();
   }
   return (
     <>
-      <form onSubmit={submitQuestionForm}>
-        <div className="mb-3">
-          <label className="form-label" htmlFor="ansTitle">
-            الاجابة
-          </label>
-          <input
-            type="text"
-            placeholder="Answer Title"
-            className="form-control"
-            id="ansTitle"
-            ref={AnsTitle}
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label" htmlFor="ansImage">
-            صورة الاجابة
-          </label>
-          <input type="file" ref={AnsInput} onChange={HandleImageChange} />
-          {ansImage ? (
-            <img
-              src={URL.createObjectURL(ansImage)}
-              alt=""
-              style={{ width: "40px", height: "40px", borderRadius: "50%" }}
-            />
-          ) : (
-            <img src="" alt="" />
-          )}
-        </div>
-        <div className="mb-3">
-          <label className="form-label" htmlFor="degreeN">
-            درجة السؤال
-          </label>
-          <input
-            type="number"
-            className="form-control"
-            id="degreeN"
-            ref={AnsDegree}
-          />
-        </div>
-        <div className="mb-3">
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="ansResult"
-              id="ans01"
-              value={true}
-              ref={AnsResult}
-            />
-            <label className="form-check-label" htmlFor="ans01">
-              True
-            </label>
+      <div className="row">
+        <div className="col-11 col-lg-6 mx-auto rounded">
+          <div className="card">
+            <div className="card-header">
+              <Link className="float-end" onClick={CL}>
+                X
+              </Link>
+              <h5 className="card-title mb-0">اضافة اجابة</h5>
+            </div>
+            <div className="card-body">
+              <form onSubmit={submitQuestionForm}>
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="ansTitle">
+                    الاجابة
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Answer Title"
+                    className="form-control"
+                    id="ansTitle"
+                    ref={AnsTitle}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="ansImage">
+                    صورة الاجابة
+                  </label>
+                  <input
+                    type="file"
+                    ref={AnsInput}
+                    onChange={HandleImageChange}
+                  />
+                  {ansImage ? (
+                    <img
+                      src={URL.createObjectURL(ansImage)}
+                      alt=""
+                      style={{
+                        width: "40px",
+                        height: "40px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  ) : (
+                    <img src="" alt="" />
+                  )}
+                </div>
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="degreeN">
+                    درجة السؤال
+                  </label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="degreeN"
+                    ref={AnsDegree}
+                  />
+                </div>
+                <div className="mb-3">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="ansResult"
+                      id="ans01"
+                      value={true}
+                      ref={AnsResult}
+                    />
+                    <label className="form-check-label" htmlFor="ans01">
+                      True
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="ansResult"
+                      id="ans01"
+                      value={false}
+                    />
+                    <label className="form-check-label" htmlFor="ans02">
+                      false
+                    </label>
+                  </div>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  اضافة الاجابة
+                </button>
+              </form>
+            </div>
           </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="ansResult"
-              id="ans01"
-              value={false}
-            />
-            <label className="form-check-label" htmlFor="ans02">
-              false
-            </label>
-          </div>
         </div>
-        <button type="submit" className="btn btn-primary">
-          اضافة الاجابة
-        </button>
-      </form>
+      </div>
     </>
   );
 };

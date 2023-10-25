@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const DeleteQuestion = (props) => {
@@ -19,9 +19,9 @@ const DeleteQuestion = (props) => {
     );
     const Data = await respons.json();
     console.log(Data);
-    navigate("/admin/questions", { replace: true });
+    navigate("/admin/exam", { replace: true });
   };
-  return <div>hello</div>;
+  // return <div>hello</div>;
 };
 
 export default DeleteQuestion;

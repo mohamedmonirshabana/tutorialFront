@@ -3,18 +3,18 @@ import studentimg from "./student.svg";
 import { Link } from "react-router-dom";
 
 const StudentD = (props) => {
-  const R = props.firstTime;
+  // const R = props.firstTime;
   console.log(props.cdate);
 
-  const mydate = new Date(props.cdate);
+  // const mydate = new Date(props.cdate);
   // const Month = mydate.getMonth();
 
   // console.log(mydate);
   // console.log(Month);
-  const month = mydate.getMonth();
+  // const month = mydate.getMonth();
   // console.log(month);
-  const day = mydate.getDate();
-  const year = mydate.getFullYear();
+  // const day = mydate.getDate();
+  // const year = mydate.getFullYear();
   return (
     <div className="container-fluid p-0">
       <div className="mb-3">
@@ -67,33 +67,15 @@ const StudentD = (props) => {
             ) : (
               <div className="card-body">
                 <h5 className="h6 card-title">Skills</h5>
-                <a href="#" className="badge bg-primary me-1 my-1">
-                  HTML
-                </a>
-                <a href="#" className="badge bg-primary me-1 my-1">
-                  JavaScript
-                </a>
-                <a href="#" className="badge bg-primary me-1 my-1">
-                  Sass
-                </a>
-                <a href="#" className="badge bg-primary me-1 my-1">
-                  Angular
-                </a>
-                <a href="#" className="badge bg-primary me-1 my-1">
-                  Vue
-                </a>
-                <a href="#" className="badge bg-primary me-1 my-1">
-                  React
-                </a>
-                <a href="#" className="badge bg-primary me-1 my-1">
-                  Redux
-                </a>
-                <a href="#" className="badge bg-primary me-1 my-1">
-                  UI
-                </a>
-                <a href="#" className="badge bg-primary me-1 my-1">
-                  UX
-                </a>
+                <Link className="badge bg-primary me-1 my-1">HTML</Link>
+                <Link className="badge bg-primary me-1 my-1">JavaScript</Link>
+                <Link className="badge bg-primary me-1 my-1">Sass</Link>
+                <Link className="badge bg-primary me-1 my-1">Angular</Link>
+                <Link className="badge bg-primary me-1 my-1">Vue</Link>
+                <Link className="badge bg-primary me-1 my-1">React</Link>
+                <Link className="badge bg-primary me-1 my-1">Redux</Link>
+                <Link className="badge bg-primary me-1 my-1">UI</Link>
+                <Link className="badge bg-primary me-1 my-1">UX</Link>
               </div>
             )}
             <hr className="my-0" />
@@ -106,7 +88,7 @@ const StudentD = (props) => {
                       data-feather="home"
                       className="feather-sm me-1"
                     ></span>
-                    Degree: <a href="#">80%</a>
+                    Degree: <Link>80%</Link>
                   </li>
                 ) : (
                   <li className="mb-1">

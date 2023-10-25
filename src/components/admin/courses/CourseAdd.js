@@ -1,14 +1,13 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import ATrack from "../../UI/Courses/ATrack";
 import GetExam from "../../UI/Question/GetExam";
 
-const CourseAdd = () => {
+const CourseAdd = (props) => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const [instruc, setInstruct] = useState([]);
   const [target, setTarget] = useState([]);
-  const [track, setTrack] = useState();
+
   const [exid, setExid] = useState(null);
   const [mystate, setMystate] = useState(false);
 
@@ -16,9 +15,6 @@ const CourseAdd = () => {
     setExid(id);
   }
 
-  function addTrack(id) {
-    setTrack(id);
-  }
   const cName = useRef();
   const conditiontrue = useRef();
   const conditionfalse = useRef();
@@ -26,26 +22,6 @@ const CourseAdd = () => {
   const about = useRef();
   const instruct = useRef();
   const refTarget = useRef();
-
-  // function handelForm(event) {
-  //   event.preventDefault();
-  //   const Data = {
-  //     coursename: cName.current.value,
-  //     examid: track,
-  //     Author: Author,
-  //     aboutCourse: about.current.value,
-  //     instruction: instruc,
-  //     target: target,
-  //   };
-  //   fetch(`http://localhost/admin/course/add/${track}`, {
-  //     method: "POST",
-  //     body: JSON.stringify(Data),
-  //     headers: {
-  //       Authorization: `${token}`,
-  //       "content-type": "application/json",
-  //     },
-  //   });
-  // }
 
   function changeCondition() {
     if (conditiontrue.current.checked) {
@@ -81,8 +57,7 @@ const CourseAdd = () => {
       instruction: instruc,
       target: target,
     };
-    // console.log(Data);
-    fetch(`http://localhost:8000/admin/course/add/${track}`, {
+    fetch(`http://localhost:8000/admin/course/add/${props.trac}`, {
       method: "POST",
       body: JSON.stringify(Data),
       headers: {
@@ -95,15 +70,12 @@ const CourseAdd = () => {
       })
       .then((data) => {
         console.log(data);
-        navigate("/admin/courses", { replace: true });
+        navigate("/admin/track", { replace: true });
       });
   }
 
   return (
     <form onSubmit={submitHandler}>
-      <div className="mb-3 pt-3">
-        <ATrack chanTid={addTrack} />
-      </div>
       <div className="mb-3">
         <label htmlFor="cname" className="form-label">
           اسم الكورس
@@ -176,7 +148,9 @@ const CourseAdd = () => {
                 placeholder="التعليمات الخاصة بالكورس"
                 ref={instruct}
               />
-              <button onClick={addInstruct}>اضافة</button>
+              <button onClick={addInstruct} className="btn btn-success">
+                اضافة
+              </button>
             </div>
             <div className="col-6">
               <div>
@@ -194,12 +168,14 @@ const CourseAdd = () => {
                 className="form-control"
                 ref={refTarget}
               />
-              <button onClick={addTarget}>اضافة</button>
+              <button onClick={addTarget} className="btn btn-success">
+                اضافة
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <button>اضافة الكورس</button>
+      <button className="btn btn-primary">اضافة الكورس</button>
     </form>
   );
 };
