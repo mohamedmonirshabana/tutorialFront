@@ -7,11 +7,11 @@ import Footer from "../../components/general/footer/GeneralFooter";
 const Signin = () => {
   return (
     <>
-      <Header>
+      {/* <Header>
         <Nav />
-      </Header>
+      </Header> */}
       <Account />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

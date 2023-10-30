@@ -102,7 +102,7 @@ const Exam = ({
       }
     );
     const result = await Dsen.json();
-    navigate(`/Examresult/${result}`, { replace: true });
+    navigate(`/prerxamresult/${result}`, { replace: true });
   };
 
   function addQuestionAndAnswer(qid, ansid) {
@@ -117,18 +117,70 @@ const Exam = ({
   return (
     <>
       {showPanel ? (
-        <div
-          className="container border border-dark shadow p-3 mb-5 bg-body-tertiary rounded"
-          dir="rtl"
-        >
-          <h1 className="text-center">{examname}</h1>
-          <hr />
-          <h2>درجة الامتحان {examDegree}</h2>
-          <h2>عدد الاسئلة {Questioncount}</h2>
-          <button className="get-started-btn" onClick={ChangePanel}>
-            الامتحان
-          </button>
-        </div>
+        <main className="d-flex w-100">
+          <div className="container d-flex flex-column">
+            <div className="row vh-100">
+              <div className="col-sm-10 col-md-8 col-lg-6 col-xl-5 mx-auto d-table h-100">
+                <div className="d-table-cell align-middle">
+                  <div className="text-center mt-4">
+                    <h1 className="h2">{examname}</h1>
+                    {/* <p className="lead">امتحان قبلى</p> */}
+                  </div>
+                  <div className="card">
+                    <div className="card-body">
+                      <div className="m-sm-3">
+                        <div className="d-flex flex-column" dir="rtl">
+                          <p>
+                            <strong className="text-primary">
+                              الهدف من الإختبار :
+                            </strong>
+                            <br />
+                            يهدف هذا الإختبار إلى قياس الجوانب المعرفية لمهارات
+                            انتاج الرسومات المتحركة ثنائية وثلاثية الأبعاد لدى
+                            طلاب كلية التربية.
+                            <br />
+                            <strong className="text-primary">
+                              تعليمات الإختبار :
+                            </strong>
+                            <br />
+                            عزيزي الطالب أقرأ التعليمات جيداً قبل الشروع فى
+                            الإجابة : 1- يحتوى هذا الإختبار على جزئين؛ جزء خاص
+                            بأسئلة الإختيار من متعدد، وجزء خاص لأسئلة الصواب
+                            والخطأ. 2- سوف يتم الإجابة بإستخدام مؤشر الفارة 3-
+                            مدة الإختبار 30 دقيقة 4- لا يمكن تعديل الإجابات فى
+                            الإختبار بعد تسليمها 5- بعد الإنتهاء من حل السؤال
+                            انقر على زر التالي للإنتقال للسؤال التالي 6- بعد
+                            الإنتهاء من الإجابة عن جميع الأسئلة انقر فوق زر
+                            انهاء الإختبار؛ لتظهر نتيجة الإختبار 7- نسبة النجاح
+                            فى الإختبار من 85%
+                          </p>
+                          <p>
+                            <strong className="text-primary">
+                              درجة الامتحان
+                            </strong>
+                            {examDegree}
+                          </p>
+                          <p>
+                            <strong className="text-primary">
+                              عدد الاسئلة
+                            </strong>
+                            {Questioncount}
+                          </p>
+                          <button
+                            className="btn btn-primary"
+                            onClick={ChangePanel}
+                          >
+                            ابداءالاختبار القبلى
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
       ) : (
         <div>
           {/* <ExamStart examName={examname} QuestionCount={items.length} /> */}
@@ -145,3 +197,18 @@ const Exam = ({
 };
 
 export default Exam;
+
+{
+  /* <div
+  className="container border border-dark shadow p-3 mb-5 bg-body-tertiary rounded"
+  dir="rtl"
+>
+  <h1 className="text-center">{examname}</h1>
+  <hr />
+  <h2>درجة الامتحان {examDegree}</h2>
+  <h2>عدد الاسئلة {Questioncount}</h2>
+  <button className="get-started-btn" onClick={ChangePanel}>
+    الامتحان
+  </button>
+</div>; */
+}

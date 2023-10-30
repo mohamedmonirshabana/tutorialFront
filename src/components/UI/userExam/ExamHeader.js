@@ -7,7 +7,7 @@ const ExamHeader = ({ arin, poCurrent, inc, exTitle, sen }) => {
     <div className="row" style={{ height: "10%" }}>
       <div className="col-6 pt-5">
         <div className="d-flex justify-content-between">
-          <h5>Select one answer</h5>
+          <h5>اختر الاجابة الصحيحة</h5>
           {poCurrent === arin ? (
             <button className="btn btn-dark text-light" onClick={sen}>
               انهاء الاختبار
@@ -24,7 +24,7 @@ const ExamHeader = ({ arin, poCurrent, inc, exTitle, sen }) => {
         </div>
       </div>
       <div className="col-6 pt-5 border-start h-100">
-        {exTitle === "preExam" ? <h3>امتحان قبلى</h3> : <h3>{exTitle}</h3>}
+        {exTitle === "preExam" ? <h3></h3> : <h3>{exTitle}</h3>}
       </div>
     </div>
   );

@@ -47,7 +47,7 @@ const ShowTrack = () => {
         <div className="col-12 col-md-12 col-xxl-12 d-flex order-2 order-xxl-3">
           <div className="card flex-fill w-100">
             <div className="card-header">
-              <h5 className="card-title mb-0">بينات المسارات</h5>
+              <h5 className="card-title mb-0">بينات المديولات التعليمية</h5>
             </div>
             <div className="card-body d-flex">
               <div className="align-self-center w-100">

@@ -14,7 +14,7 @@ const AdminSide = () => {
         <Link to="/admin/questions"> الاسئلة </Link>
       </li>
       <li className="list-group-item">
-        <Link to="/admin/track">المسارات</Link>
+        <Link to="/admin/track">المديولات التعليمية</Link>
       </li>
       <li className="list-group-item">
         <Link to="/admin/courses">الكورس</Link>

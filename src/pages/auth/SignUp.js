@@ -8,11 +8,11 @@ import Footer from "../../components/general/footer/GeneralFooter";
 const SignUp = () => {
   return (
     <>
-      <Header>
+      {/* <Header>
         <Nav />
-      </Header>
+      </Header> */}
       <Register />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

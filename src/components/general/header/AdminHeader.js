@@ -67,11 +67,11 @@ const AdminHeader = (props) => {
                 <span className="align-middle">الامتحانات كلها</span>
               </Link>
             </li>
-            <li className="sidebar-header">المسارات</li>
+            <li className="sidebar-header">المديولات التعليمية</li>
             <li className="sidebar-item">
               <Link className="sidebar-link" to="/admin/track">
                 <i className="align-middle" data-feather="bar-chart-2"></i>
-                <span className="align-middle">المسارات كلها</span>
+                <span className="align-middle">المديولات التعليمية كلها</span>
               </Link>
             </li>
           </ul>

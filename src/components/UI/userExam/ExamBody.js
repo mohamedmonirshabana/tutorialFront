@@ -69,7 +69,7 @@ const ExamBody = ({ data, evn, ad }) => {
         </div>
         <div className="row" style={{ height: "10%" }}>
           <div className="col-6"></div>
-          <ExamTail />
+          {/* <ExamTail /> */}
         </div>
       </div>
     </>

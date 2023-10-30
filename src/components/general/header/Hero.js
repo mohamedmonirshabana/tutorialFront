@@ -12,11 +12,12 @@ const Hero = () => {
         data-aos="zoom-in"
         data-aos-delay="100"
       >
-        <h1 dir="rtl">
-          فصل افتراضي قائم على تكنيز مصادر التعلم لتنمية مهارات
-          <br />
-          انتاج الرسومات المتحركة لدى طلاب كلية التربية
+        <h1 dir="rtl" className="text-center">
+          تنمية مهارات انتاج الرسومات المتحركة لدى طلاب كلية التربية
         </h1>
+        <h2 dir="rtl" className="text-center mt-5">
+          اعداد الباحثة :غادة رسلان
+        </h2>
         <h2 dir="rtl">
           اشراف
           <br />
@@ -24,9 +25,9 @@ const Hero = () => {
           <br />
           د/ امانى سمير عبد الوهاب
         </h2>
-        <a href="courses.html" className="btn-get-started">
+        {/* <a href="courses.html" className="btn-get-started">
           Get Started
-        </a>
+        </a> */}
       </div>
     </section>
   );

@@ -1,10 +1,14 @@
 import React from "react";
 import Track2D from "../../components/track/Track2D";
+import UserHeader from "../../components/general/header/UserHeader";
 
 const ShowTrack2D = () => {
   return (
     <>
-      <Track2D />
+      <UserHeader />
+      <div className="container" dir="rtl">
+        <Track2D />
+      </div>
     </>
   );
 };

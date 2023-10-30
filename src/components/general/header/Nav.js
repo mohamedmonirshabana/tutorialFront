@@ -35,7 +35,7 @@ const Nav = () => {
             </ul>
           </li>
           <li>
-            <Link to="/tracks">المسارات</Link>
+            <Link to="/tracks">المديولات التعليمية</Link>
           </li>
           <li>
             <Link className="active" to="/">

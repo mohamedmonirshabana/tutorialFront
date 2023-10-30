@@ -5,11 +5,15 @@ import iconRight from "./arrow-right.svg";
 
 const TrackCard = (props) => {
   const url = "/track/enroll/" + props.id;
+
   return (
     <div className="border rounded p-1 d-flex flex-column justify-content-between m-3 w-25 shadow-sm">
       <div
         className="d-flex flex-column m-2  rounded-top p-3 "
-        style={{ background: "rgba(9, 139, 192, 0.24)" }}
+        style={{
+          background: "url('/images/Track.jpg')",
+          backgroundSize: "cover",
+        }}
       >
         <div className="d-flex justify-content-between w-100  ">
           <div className="fs-6 align-self-center">{props.tag}</div>
@@ -22,17 +26,18 @@ const TrackCard = (props) => {
             />
           </Link>
         </div>
-        <div className="w-100 d-flex justify-content-between  align-items-center mt-5 ">
-          <h3>{props.title}</h3>
+        <div className="w-100 d-flex justify-content-between  align-items-center mt-5 text-white ">
+          {/* <h3>{props.title}</h3> */}
           <Link>
             <img src={iconRight} alt="" />
           </Link>
         </div>
       </div>
-      <div className="d-flex align-items-center justify-content-between align-self-end  w-100 px-3 py-3  ">
+      <div className="d-flex flex-column align-items-center justify-content-between align-self-end  w-100 px-3 py-3  ">
+        <h3>{props.title}</h3>
         <h3 className="fs-5">{props.about}</h3>
         <Link to={url} className="btn btn-dark rounded">
-          انضم
+          ابدء
         </Link>
       </div>
     </div>
@@ -40,3 +45,5 @@ const TrackCard = (props) => {
 };
 
 export default TrackCard;
+
+//rgba(9, 139, 192, 0.24)

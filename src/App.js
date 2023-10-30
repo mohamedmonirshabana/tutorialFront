@@ -46,6 +46,8 @@ import Signout from "./pages/Signout";
 import CourseTrack from "./pages/admin/track/CourseTrack";
 import CourseDetails from "./pages/admin/course/CourseDetails";
 import Video from "./pages/admin/video/Video";
+import StudentCourse from "./pages/user/StudentCourse";
+import ShowVideoUser from "./components/user/ShowVideoUser";
 // import { Helmet } from "react-helmet";
 // import useScript from "./hooks/useScript";
 const App = () => {
@@ -105,6 +107,8 @@ const App = () => {
         <Route path="/track/track2d" element={<ShowTrack2D />} />
         <Route path="/track/track3d" element={<ShowTrack3D />} />
         <Route path="/track/enroll/:trackid" element={<Enroll />} />
+        <Route path="/course/:courid" element={<StudentCourse />} />
+        <Route path="/show/video/:vid" element={<ShowVideoUser />} />
       </Routes>
     </div>
   );
